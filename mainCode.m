@@ -47,12 +47,12 @@ pos_lever = 1;
 penwidth = 5 * ep.window.scalefactor;
 dotradius = 30 * ep.window.scalefactor;
 font_bandit = round(40 * ep.window.scalefactor);
-bandit_color = {[0 255 255], [0 255 0]}; %
+bandit_color = {[0 255 255], [0 255 255]}; %
 bL = bandit(ep.window);
 bL.setup(w,h,w_lever,h_lever,pos_lever,penwidth,dotradius,1,'left', font_bandit, bandit_color);
 bR = bandit(ep.window);
 bR.setup(w,h,w_lever,h_lever,pos_lever,penwidth,dotradius,1,'right', font_bandit, bandit_color);
-bandit_color = {[0 255 255], [0 255 0]}; %
+bandit_color = {[0 255 0], [0 255 0]}; %
 bL2 = bandit(ep.window);
 bL2.setup(w,h,w_lever,h_lever,pos_lever,penwidth,dotradius,1,'left', font_bandit, bandit_color);
 bR2 = bandit(ep.window);
