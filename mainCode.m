@@ -18,6 +18,11 @@ if ~exist(datadir)
 end          
    filename = 'test';
 is2 = false;
+if is2
+    global uR uS
+    uR = udpB;
+    uS = udpA;
+end
 %
 keylist = [KbName('leftarrow'), KbName('rightarrow')];
 ks = {'left', 'right'};
@@ -75,6 +80,7 @@ end
 function runtrial(i)
     global k1 k2 exploitside r flag rt
     global ep pgb pgb2 bL bR bL2 bR2 is2 keylist ks
+    global uR uS
 
  rt(i) = NaN;
         % reward setting for this game
