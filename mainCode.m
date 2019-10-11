@@ -15,8 +15,8 @@ ntrial = 20;
 datadir = './Data/';
 if ~exist(datadir)
     mkdir(datadir);
-end
-filename = 'test';
+end          
+   filename = 'test';
 is2 = false;
 %
 keylist = [KbName('leftarrow'), KbName('rightarrow')];
@@ -39,7 +39,6 @@ for gi = 1:ngame
     save(fullfile(datadir,filename), 'game');
 end
 function [bL, bR, bL2, bR2] = set_bandit(ep)
-bandit_color = {[0 255 255], [0 255 0]}; %
 w = 80 * ep.window.scalefactor;
 h = 60 * ep.window.scalefactor;
 w_lever = 80 * ep.window.scalefactor;
@@ -48,10 +47,12 @@ pos_lever = 1;
 penwidth = 5 * ep.window.scalefactor;
 dotradius = 30 * ep.window.scalefactor;
 font_bandit = round(40 * ep.window.scalefactor);
+bandit_color = {[0 255 255], [0 255 0]}; %
 bL = bandit(ep.window);
 bL.setup(w,h,w_lever,h_lever,pos_lever,penwidth,dotradius,1,'left', font_bandit, bandit_color);
 bR = bandit(ep.window);
 bR.setup(w,h,w_lever,h_lever,pos_lever,penwidth,dotradius,1,'right', font_bandit, bandit_color);
+bandit_color = {[0 255 255], [0 255 0]}; %
 bL2 = bandit(ep.window);
 bL2.setup(w,h,w_lever,h_lever,pos_lever,penwidth,dotradius,1,'left', font_bandit, bandit_color);
 bR2 = bandit(ep.window);
@@ -209,7 +210,7 @@ function runtrial(i)
 end
 
 function instructions()
-    global ep pgb
+    global ep pgb pgb2              
     [ev, iStr] = instructionList;
 
     endFlag = false;  
@@ -231,7 +232,8 @@ function instructions()
                 Screen('FillRect',ep.window.id,[0 0 0]);
                 Screen('Flip',ep.window.id);
                 nnn = 100;
-                pgb.flush(100);
+                pgb.flush(100);                
+                pgb2.flush(100);
                 g = 1;
                 while ~pgb.isstop
                     runtrial(g);
