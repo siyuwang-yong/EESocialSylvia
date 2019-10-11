@@ -14,16 +14,22 @@ classdef tsk_sylvia < exp_psychtoolbox
         datadir
         is2
         flag
+        udpA
     end
     methods
-        function obj = tsk_sylvia(datadir, is2)
+        function obj = tsk_sylvia(datadir, udpA)
             obj.setup_window;
             obj.datadir = datadir;
             
             if ~exist(datadir)
                 mkdir(datadir);
             end
-            obj.is2 = is2;
+            if exist('udpA')
+                obj.udpA = udpA;
+                obj.is2 = true;
+            else
+                obj.is2 = false;
+            end
             pgb = progressbar;
             pgb.setup(obj.window, 0.8, 0.03, 0.1) ;
             pgb2 = progressbar;
@@ -195,8 +201,8 @@ classdef tsk_sylvia < exp_psychtoolbox
             
             % draw reward
             if obj.is2
-                fwrite(uS, k1(i));
-                k2(i) = fread(uR);
+                fwrite(obj.udpA, k1(i));
+                k2(i) = fread(obj.udpA);
             else
                 k2(i) = ceil(rand*2);
                 
