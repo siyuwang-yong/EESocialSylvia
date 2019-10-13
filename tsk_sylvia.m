@@ -328,7 +328,7 @@ classdef tsk_sylvia < exp_psychtoolbox
             % instructions without sound
             i=i+1; ev{i} = 'blank';      iStr{i} = 'Welcome! Thank you for volunteering for this experiment. \nIn the next hour you will be playing a series of games competing against an opponent to get as many points as you can as fast as possible. ';
             i=i+1; ev{i} = 'blank';      iStr{i} = 'The game is modeled after the "one-arm bandits" slot machines that are popular in casinos and they will look like this';
-            i=i+1; ev{i} = 'blank';      iStr{i} = 'Every round, you will choose the bandit that you think has the highest reward?the bandits will be highlighted green before you make your choice, and blue once you choose';
+            i=i+1; ev{i} = 'blank';      iStr{i} = 'Every round, you will choose the bandit that you think has the highest reward \nThe bandits will be highlighted green before you make your choice, and blue once you choose';
             i=i+1; ev{i} = 'blank';      iStr{i} = 'After you and your opponent have both made your choices, the reward value will be revealed and your progress bar will fill up. \nA new game will start if either your or your opponents progress bar reaches 300 points';
             % i=i+1; ev{i} = 'blank';      iStr{i} = '';
             % i=i+1; ev{i} = 'blank';      iStr{i} = '';
