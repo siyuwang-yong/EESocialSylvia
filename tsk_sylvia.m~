@@ -332,6 +332,8 @@ classdef tsk_sylvia < exp_psychtoolbox
             i=i+1; ev{i} = 'blank';      iStr{i} = 'The bandits will be highlighted green before you make your choice, and blue once you choose \nOnce you and your opponent both make your choices, the value of each of your choices will be shown on the screen.';
             i=i+1; ev{i} = 'blank';      iStr{i} = 'Your goal is to gain as many points as possible and hopefully more points that your rival.';
             i=i+1; ev{i} = 'blank';      iStr{i} = 'Every round, you should choose the bandit that you think has the highest reward';
+            i=i+1; ev{i} = 'blank';      iStr{i} = '';
+            i=i+1; ev{i} = 'blank';      iStr{i} = '';
             i=i+1; ev{i} = 'blank';      iStr{i} = 'After every round, your progress bar will fill up with your current point total. \nA new game will start if either your or your opponents progress bar reaches 300 points';
             i=i+1; ev{i} = 'blank';      iStr{i} = 'So ... to be sure that everything makes sense let''s work through a few example games ... \n Press the left arrow key (<-) to play the left bandit \n Press the right arrow key (->) to play the right bandit';
             i=i+1; ev{i} = 'exampleplay1'; iStr{i} = 'Great job! Now you know the rules!';
