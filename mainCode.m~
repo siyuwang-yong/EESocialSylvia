@@ -10,14 +10,19 @@ pgb.setup(ep.window, 0.8, 0.03, 0.1) ;
 pgb2 = progressbar;
 pgb2.setup(ep.window, 0.8, 0.03, 0.9        );
 % task parameters
-ngame = 10;
+rand('seed', 
 ntrial = 20;   
 datadir = './Data/';
 if ~exist(datadir)
     mkdir(datadir);
 end          
    filename = 'test';
-is2 = false;
+is2 = true;
+if is2 
+    global uR uS
+    uR = udpA;
+    uS = udpA;
+end
 %
 keylist = [KbName('leftarrow'), KbName('rightarrow')];
 ks = {'left', 'right'};
@@ -75,6 +80,7 @@ end
 function runtrial(i)
     global k1 k2 exploitside r flag rt
     global ep pgb pgb2 bL bR bL2 bR2 is2 keylist ks
+    global uR uS
 
  rt(i) = NaN;
         % reward setting for this game
@@ -292,9 +298,9 @@ i=i+1; ev{i} = 'blank';      iStr{i} = 'Welcome! Thank you for volunteering for 
 i=i+1; ev{i} = 'blank';      iStr{i} = 'The game is modeled after the "one-arm bandits" slot machines that are popular in casinos and they will look like this';
 i=i+1; ev{i} = 'blank';      iStr{i} = 'Every round, you will choose the bandit that you think has the highest reward?the bandits will be highlighted green before you make your choice, and blue once you choose';
 i=i+1; ev{i} = 'blank';      iStr{i} = 'After you and your opponent have both made your choices, the reward value will be revealed and your progress bar will fill up. \nA new game will start if either your or your opponents progress bar reaches 300 points';
-i=i+1; ev{i} = 'blank';      iStr{i} = '';
-i=i+1; ev{i} = 'blank';      iStr{i} = '';
-i=i+1; ev{i} = 'blank';      iStr{i} = '';
+% i=i+1; ev{i} = 'blank';      iStr{i} = '';
+% i=i+1; ev{i} = 'blank';      iStr{i} = '';
+% i=i+1; ev{i} = 'blank';      iStr{i} = '';
 i=i+1; ev{i} = 'blank';      iStr{i} = 'So ... to be sure that everything makes sense let''s work through a few example games ... \n Press the left arrow key (<-) to play the left bandit \n Press the right arrow key (->) to play the right bandit';
 i=i+1; ev{i} = 'exampleplay1'; iStr{i} = 'Great job! Now you know the rules!';
 i=i+1; ev{i} = 'blank';      iStr{i} = 'We want to see how well two human beings can do in this task, try your best to get as many points as you can!';
